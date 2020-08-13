@@ -1,22 +1,149 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://yun-9090.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-08-13T22:52:36.973Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://yun-9090.github.io"/>
-    <link rel="self" href="https://yun-9090.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
-    <logo>https://yun-9090.github.io/images/avatar.png</logo>
-    <icon>https://yun-9090.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
-    <entry>
-        <title type="html"><![CDATA[CSS]]></title>
-        <id>https://yun-9090.github.io/post/css/</id>
-        <link href="https://yun-9090.github.io/post/css/">
-        </link>
-        <updated>2020-08-13T22:41:37.000Z</updated>
-        <content type="html"><![CDATA[<p>CSS是什么：<br>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+<title>CSS - Gridea</title>
+<meta name="description" content="温故而知新">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link type='text/css' rel='stylesheet' href='https://yun-9090.github.io/styles/main.css' media='screen' />
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
+<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript" src='https://yun-9090.github.io/media/scripts/jquery.js'></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</head>
+
+<body>
+  <div class="layout theme-dark">
+    <div class="layout-header">
+
+	<div class="layout-header-main">
+		<div class="container">
+			<div class="row justify-content-lg-center">
+				<div class="col-12 col-lg-9">
+
+					<div class="navbar">
+
+						<div class="logo">
+							<a href="https://yun-9090.github.io">
+								<img class="logo"
+									src="https://yun-9090.github.io/media/images/site_avatar.png?v=1597359006553"
+									alt="">
+							</a>
+						</div>
+
+						<div class="menu d-md-inline-block d-none">
+							<ul class="layout-navigation-list">
+								
+								<li class="layout-navigation-item"><a title="首页"
+										href="/">首页</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="归档"
+										href="/archives">归档</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="标签"
+										href="/tags">标签</a>
+								</li>
+								
+								<li class="layout-navigation-item"><a title="关于"
+										href="/post/about">关于</a>
+								</li>
+								
+							</ul>
+						</div>
+
+						<div class="item d-md-inline-block d-none">
+							<div class="search-icon">
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</div>
+						</div>
+
+
+
+						<div class="d-md-inline-block d-none">
+							<div class="search-lightbox">
+								<div class="search-body">
+
+									<form id="gridea-search-form" data-update="1597359006553" action="/search/" class="search-form">
+										<input type="text" name="q" id="s" value="" class="search-field" placeholder="请输入搜索关键词" aria-label="请输入搜索关键词" required="">
+										<button type="submit" class="submit" aria-label="Submit">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</form>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="nav d-md-none d-inline-block">
+							<div class="trigger">
+								<i class="fa fa-bars layout-btn-toggle" aria-hidden="true"></i>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+		</div>
+	</div>
+
+</div>
+    <div class="layout-collapse d-md-none">
+	<div class="layout-collapse-main">
+		<ul class="layout-collapse-list">
+			
+			<li class="layout-collapse-item"><a title="首页" href="/">首页</a></li>
+			
+			<li class="layout-collapse-item"><a title="归档" href="/archives">归档</a></li>
+			
+			<li class="layout-collapse-item"><a title="标签" href="/tags">标签</a></li>
+			
+			<li class="layout-collapse-item"><a title="关于" href="/post/about">关于</a></li>
+			
+
+		</ul>
+	</div>
+</div>
+
+    <div class="layout-content">
+      <div class="layout-content-main">
+        <div class="container">
+          <div class="row justify-content-lg-center">
+            <div class="col-12 col-lg-9">
+              <div class="layout-post">
+                <div class="layout-post-body">
+                  <div class="row">
+
+                    <div class="col-12 col-lg-10">
+                      <div class="layout-post-main m-right m-md-right">
+                        <div class="layout-post-header">
+                          <h1 class="layout-post-title">CSS</h1>
+                          <div class="layout-post-meta">
+                            <div class="item">
+                              
+                            </div>
+                            <div class="item">
+                              <span>2020-08-14</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="layout-post-content">
+                          <div class="layout-post-item">
+                            
+                            <p>CSS是什么：<br>
 层叠样式表 (英文全称: Cascading Style Sheets)<br>
 CSS可以干什么:<br>
 简单来说就是修饰网页</p>
@@ -391,201 +518,154 @@ gt:大于</p>
 *<br>
 */<br>
 具体看css规范文档</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[HTML]]></title>
-        <id>https://yun-9090.github.io/post/html/</id>
-        <link href="https://yun-9090.github.io/post/html/">
-        </link>
-        <updated>2020-08-04T12:11:00.000Z</updated>
-        <summary type="html"><![CDATA[<h1 id="html">HTML</h1>
-<p>Hyper Text Markup Language : 超文本标记语言</p>
-]]></summary>
-        <content type="html"><![CDATA[<h1 id="html">HTML</h1>
-<p>Hyper Text Markup Language : 超文本标记语言</p>
-<!-- more -->
-<h2 id="字符集的意义">字符集的意义</h2>
-<ul>
-<li>1、网页中特殊意义的字符</li>
-<li>2、键盘上没有的字符</li>
-</ul>
-<p>写法规则：<br>
-以&amp;开始<br>
-以分号(;)结束</p>
-<table>
-<thead>
-<tr>
-<th>header 1</th>
-<th>header 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>row 1 col 1</td>
-<td>row 1 col 2</td>
-</tr>
-<tr>
-<td>row 2 col 1</td>
-<td>row 2 col 2</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>
-<h2 id="块级-行内-行内块元素">块级、行内、行内块元素</h2>
-</li>
-</ul>
-<p>*****规范 ：在特定的情况下用特定的东西 *****</p>
-<ul>
-<li>
-<ul>
-<li>
-<h3 id="块级元素">块级元素</h3>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p><strong>特点：</strong><br>
-1、总是在新行上开始【独占一行】<br>
-2、高度和行高以及内外边距都是可控制的<br>
-3、宽度缺省默认就是100%宽度</p>
-</blockquote>
-<p>功能：主要是用来搭建网站架构，页面布局，承载内容</p>
-<p>div  :  架构、结构<br>
-p    :  段落<br>
-h1、h2、h3、h4、h5、h6 ： 标题<br>
-ol：有序列表===》配合li去使用<br>
-ul：无序列表===》配合li去使用<br>
-hr：水平线<br>
-noscript：浏览器禁止了javascript脚本运行里面代码<br>
-table ：表格<br>
-form  ：表单<br>
-pre   ：定义预格式文本<br>
-****一般和code配合使用</p>
-<ul>
-<li>
-<h3 id="行内元素">行内元素：</h3>
-</li>
-</ul>
-<blockquote>
-<p>特点：<br>
-1、和其他元素都在一行显示【不独占一行】<br>
-2、高、行高以及顶部和底部的边距不可修改的<br>
-3、宽度就是它文字的宽度，不可修改的</p>
-</blockquote>
-<p>功能：用户加强内容显示，控制细节</p>
-<p>标签：<br>
-span ： 文档中的节<br>
-a    ： 超链接（跳转页面）</p>
-<pre><code>&lt;a href=&quot;&quot; target=&quot;__blank&quot;&gt;新页面打开&lt;/a&gt;
-</code></pre>
-<p>code ： 代码文本<br>
-em   ： 文字倾斜、更加语义强调<br>
-i    ： 文字倾斜<br>
-使用场景：字体图标<br>
-strong ： 文字加粗、更加语义强调<br>
-b      ： 文字加粗<br>
-label  ： 定义input标注</p>
-<ul>
-<li>
-<h3 id="行内块元素">行内块元素：</h3>
-</li>
-</ul>
-<blockquote>
-<p>特点：<br>
-1、和其他元素都在一行显示【不独占一行】<br>
-2、高、行高以及顶部和底部的边距可修改的<br>
-3、宽度就是它文字的宽度，可修改的</p>
-</blockquote>
-<p>功能：用户加强内容显示，控制细节</p>
-<p>元素：<br>
-input : 定义输入控件<br>
-type='text'  输入框：默认<br>
-type='password' 密码<br>
-type='checkbox' 复选<br>
-type='radio'    单选<br>
-type='file'     上传<br>
-type='button'  按钮<br>
-type='submit'  提交按钮 会刷新页面<br>
-type='reset'<br>
-textarea  ： 文本域<br>
-select    :  定义选择列表  ****配合option来使用<br>
-img       : 定义图像</p>
-<h2 id="html标签企业级规范">HTML标签企业级规范</h2>
-<p>一、块级元素与块级元素平级、行内元素与行内元素平级</p>
-<pre><code>//span是行内元素，p是块级元素，所以这个是错误的嵌套
-&lt;div&gt;&lt;span&gt;&lt;/span&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
 
-//对的
-&lt;div&gt;&lt;span&gt;&lt;/span&gt;&lt;a&gt;&lt;/a&gt;&lt;/div&gt;
-</code></pre>
-<p>二、块元素可以包含行内元素或某些块元素，但行内元素不能包含块元素，       它只能包含其它的行内元素</p>
-<pre><code>  &lt;div&gt;
-      &lt;span&gt;&lt;/span&gt;
-   &lt;/div&gt;
+                          </div>
+                        </div>
+                        <div class="layout-post-social">
+                          <div class="item reader">
+                            <div id="/post/css/" class="leancloud-visitors view"
+                              data-flag-title="CSS">
+                              <span class="post-meta-item-text">阅读 </span>
+                              <span class="leancloud-visitors-count"></span>
+                            </div>
+                          </div>
+                        </div>
 
-   &lt;span&gt;
-      &lt;span&gt;&lt;/span&gt;
-   &lt;/span&gt;
-</code></pre>
-<p>三、有几个特殊的块级元素只能包含行内元素，不能再包含块级元素<br>
-h1、h2、h3、h4、h5、h6、p、dt<br>
-四、块级元素不能放在标签p里面<br>
-五、li 标签可以包含 div 标签，因为li 和 div 标签都是装载内容的容器<br>
-四、特殊html标签</p>
-<pre><code>&lt;em&gt;文字倾斜、更加语义强调&lt;/em&gt;    
-i ：文字倾斜
-    使用场景：字体图标
-strong：文字加粗、更加语义强调
-b ：文字加粗
-&lt;del&gt;￥199（ 删除¥199用于价格）&lt;/del&gt; 
-ol---&gt;li ： 有序列表 ol的属性：type 
-ul----&gt;li ： 无序列表
-img ： 图片 标签属性：src（路径）、alt、title 
-a ： 超链接(可以跳转页面) 
-      &lt;a href=&quot;&quot; target=&quot;__blank&quot;&gt;新页面打开&lt;/a&gt;
-span：文档中的节  
-code：代码文本  
-label：定义input标注  
-单标记：
-提交用submit（会刷新页面）：&lt;input type=&quot;submit&quot; value=&quot;登录&quot;/&gt;
-&lt;br /&gt; ===》换行
-&lt;hr /&gt; ===》分割线
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://yun-9090.github.io/post/hello-gridea/</id>
-        <link href="https://yun-9090.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p><img src="https://yun-9090.github.io/post-images/1597330075439.jpg" alt="" loading="lazy">👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p><img src="https://yun-9090.github.io/post-images/1597330075439.jpg" alt="" loading="lazy">👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
-]]></content>
-    </entry>
-</feed>
+                        <div class="layout-post-navigation">
+                          <div class="navigation-list">
+                            
+                            <div class="post-card row">
+                              
+                              <div class="card-content col-8 col-md-9">
+                                <div class="card-body">
+                                  <div class="header">
+                                    <a href="https://yun-9090.github.io/post/html/" class="title">
+                                      <h4>HTML</h4>
+                                    </a>
+                                  </div>
+                                  <div class="inner d-none d-sm-block">
+                                    <div class="abstract">
+                                      <h1 id="html">HTML</h1>
+<p>Hyper Text Markup Language : 超文本标记语言</p>
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                  <div class="item"><span>下一篇</span></div>
+                                  <div class="item">2020-08-04</div>
+                                </div>
+                              </div>
+                              <div class="card-thumb col-4 col-md-3">
+                                <div class="thumb">
+                                  <a href="https://yun-9090.github.io/post/html/"
+                                    style="background-image: url('https://yun-9090.github.io/post-images/html.jpg');"></a>
+                                </div>
+                              </div>
+                              
+                            </div>
+                            
+                          </div>
+                        </div>
+
+                        <div class="layout-comments"></div>
+                        
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-lg-2 d-none d-lg-block">
+                      <div class="layout-post-sidebar">
+                        <div class="layout-sidebar-item">
+                          <ul class="markdownIt-TOC">
+<li><a href="#css%E5%BC%95%E5%85%A5%E6%A0%B7%E5%BC%8F">CSS引入样式：</a></li>
+<li><a href="#css%E9%80%89%E6%8B%A9%E5%99%A8">CSS选择器：</a></li>
+<li><a href="#css%E6%A0%B7%E5%BC%8F%E6%9D%83%E9%87%8D%E8%AE%A1%E7%AE%97%E6%9D%83%E9%87%8D">CSS样式权重（计算权重）：</a></li>
+<li><a href="#%E6%9D%83%E9%87%8D%E6%95%B0%E5%AD%97%E5%8C%96%E8%AE%A1%E7%AE%97">权重数字化计算：</a></li>
+<li><a href="#%E7%94%BB%E4%B8%89%E8%A7%92%E5%BD%A2%E9%9D%A2%E8%AF%95%E9%A2%98">画三角形（面试题）：</a></li>
+<li><a href="#css%E5%B0%BA%E5%AF%B8%E5%A4%A7%E5%B0%8F%E5%92%8C%E5%8D%95%E4%BD%8D">CSS尺寸大小和单位：</a></li>
+<li><a href="#css%E5%AD%97%E4%BD%93%E6%A0%B7%E5%BC%8F">CSS字体样式：</a></li>
+<li><a href="#%E5%9D%97%E7%BA%A7-%E8%A1%8C%E7%BA%A7-%E8%A1%8C%E7%BA%A7%E5%9D%97%E5%85%83%E7%B4%A0">块级、行级、行级块元素：</a></li>
+<li><a href="#css-border%E8%BE%B9%E6%A1%86%E6%A0%B7%E5%BC%8F">CSS border边框样式:</a></li>
+<li><a href="#%E8%83%8C%E6%99%AF%E5%9B%BE%E7%9A%84%E6%A0%B7%E5%BC%8F">背景图的样式：</a></li>
+<li><a href="#44%E7%9B%92%E6%A8%A1%E5%9E%8B">44.盒模型：</a></li>
+<li><a href="#45%E6%B5%AE%E5%8A%A8%E5%92%8C%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8">45.浮动和清除浮动:</a></li>
+<li><a href="#47overflow%E5%92%8Cbfc">47.overflow和BFC：</a></li>
+<li><a href="#49%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D-positionrelative">49.相对定位： position:relative</a></li>
+<li><a href="#50%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D-positionabsolute">50.绝对定位 ： position:absolute</a></li>
+<li><a href="#51%E6%97%A0%E4%BE%9D%E8%B5%96%E5%AE%9A%E4%BD%8D">51.无依赖定位：</a></li>
+<li><a href="#53%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8D%E5%92%8Cz-index">53.固定定位和z-index：</a></li>
+<li><a href="#54css%E5%8E%BB%E9%99%A4%E9%BB%98%E8%AE%A4%E6%A0%B7%E5%BC%8F%E5%92%8C%E8%BE%B9%E6%A1%86%E5%9C%86%E8%A7%92">54.CSS去除默认样式和边框圆角：</a></li>
+<li><a href="#57%E9%97%AE%E9%A2%98%E5%AD%90%E5%85%83%E7%B4%A0%E5%8A%A0%E5%85%A5%E4%BA%86margin%E5%A6%82%E4%BD%95%E5%92%8C%E7%88%B6%E5%85%83%E7%B4%A0%E7%9A%84%E8%BE%B9%E7%95%8C%E9%87%8D%E5%90%88">57.问题：子元素加入了margin如何和父元素的边界重合</a></li>
+<li><a href="#58%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1box-shadow">58.盒子阴影：box-shadow</a></li>
+<li><a href="#59%E9%9B%AA%E7%A2%A7%E5%9B%BE-%E7%B2%BE%E7%81%B5%E5%9B%BE">59.雪碧图、精灵图</a></li>
+<li><a href="#62%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87-%E5%92%8C-html%E5%88%A4%E6%96%ADie%E7%89%88%E6%9C%AC">62.网页图标 和 html判断IE版本</a></li>
+<li><a href="#61css%E8%A7%84%E8%8C%83">61.css规范</a></li>
+</ul>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="layout-totop d-none"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+
+    	<div class="layout-footer">
+
+		<div class="container">
+			<div class="row justify-content-lg-center">
+				<div class="col-12 col-lg-9">
+					<div class="footer">
+						<div class="row">
+							<div class="col-12 col-md-9">
+								<div class="footer-copy">
+									
+									Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+									<div class="footer-icp d-none d-sm-inline-block">
+										<span class="px-2">⋅</span>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-3 d-none d-md-block">
+								<div class="footer-links">
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src='https://yun-9090.github.io/media/scripts/main.js'></script>
+	
+
+  </div>
+</body>
+
+</html>
