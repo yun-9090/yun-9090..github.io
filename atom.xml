@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yun-9090.github.io</id>
     <title>Gridea</title>
-    <updated>2020-08-13T11:46:00.932Z</updated>
+    <updated>2020-08-13T13:02:50.666Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yun-9090.github.io"/>
     <link rel="self" href="https://yun-9090.github.io/atom.xml"/>
@@ -10,6 +10,145 @@
     <logo>https://yun-9090.github.io/images/avatar.png</logo>
     <icon>https://yun-9090.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[HTML]]></title>
+        <id>https://yun-9090.github.io/post/html/</id>
+        <link href="https://yun-9090.github.io/post/html/">
+        </link>
+        <updated>2020-08-13T12:11:00.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="html">HTML</h1>
+<p>Hyper Text Markup Language : 超文本标记语言</p>
+<h2 id="字符集的意义">字符集的意义</h2>
+<ul>
+<li>1、网页中特殊意义的字符</li>
+<li>2、键盘上没有的字符</li>
+</ul>
+<p>写法规则：<br>
+以&amp;开始<br>
+以分号(;)结束</p>
+<table>
+<thead>
+<tr>
+<th>header 1</th>
+<th>header 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>row 1 col 1</td>
+<td>row 1 col 2</td>
+</tr>
+<tr>
+<td>row 2 col 1</td>
+<td>row 2 col 2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="块级-行内-行内块元素">块级、行内、行内块元素</h2>
+<p>*****规范 ：在特定的情况下用特定的东西 *****</p>
+<h3 id="块级元素">块级元素</h3>
+<blockquote>
+<p><strong>特点：</strong><br>
+1、总是在新行上开始【独占一行】<br>
+2、高度和行高以及内外边距都是可控制的<br>
+3、宽度缺省默认就是100%宽度</p>
+</blockquote>
+<p>功能：主要是用来搭建网站架构，页面布局，承载内容</p>
+<p>div  :  架构、结构<br>
+p    :  段落<br>
+h1、h2、h3、h4、h5、h6 ： 标题<br>
+ol：有序列表===》配合li去使用<br>
+ul：无序列表===》配合li去使用<br>
+hr：水平线<br>
+noscript：浏览器禁止了javascript脚本运行里面代码<br>
+table ：表格<br>
+form  ：表单<br>
+pre   ：定义预格式文本<br>
+****一般和code配合使用</p>
+<h3 id="行内元素">行内元素：</h3>
+<blockquote>
+<p>特点：<br>
+1、和其他元素都在一行显示【不独占一行】<br>
+2、高、行高以及顶部和底部的边距不可修改的<br>
+3、宽度就是它文字的宽度，不可修改的</p>
+</blockquote>
+<p>功能：用户加强内容显示，控制细节</p>
+<p>标签：<br>
+span ： 文档中的节<br>
+a    ： 超链接（跳转页面）</p>
+<pre><code>&lt;a href=&quot;&quot; target=&quot;__blank&quot;&gt;新页面打开&lt;/a&gt;
+</code></pre>
+<p>code ： 代码文本<br>
+em   ： 文字倾斜、更加语义强调<br>
+i    ： 文字倾斜<br>
+使用场景：字体图标<br>
+strong ： 文字加粗、更加语义强调<br>
+b      ： 文字加粗<br>
+label  ： 定义input标注</p>
+<h3 id="行内块元素">行内块元素：</h3>
+<blockquote>
+<p>特点：<br>
+1、和其他元素都在一行显示【不独占一行】<br>
+2、高、行高以及顶部和底部的边距可修改的<br>
+3、宽度就是它文字的宽度，可修改的</p>
+</blockquote>
+<p>功能：用户加强内容显示，控制细节</p>
+<p>元素：<br>
+input : 定义输入控件<br>
+type='text'  输入框：默认<br>
+type='password' 密码<br>
+type='checkbox' 复选<br>
+type='radio'    单选<br>
+type='file'     上传<br>
+type='button'  按钮<br>
+type='submit'  提交按钮 会刷新页面<br>
+type='reset'<br>
+textarea  ： 文本域<br>
+select    :  定义选择列表  ****配合option来使用<br>
+img       : 定义图像</p>
+<h2 id="html标签企业级规范">HTML标签企业级规范</h2>
+<p>一、块级元素与块级元素平级、行内元素与行内元素平级</p>
+<pre><code>//span是行内元素，p是块级元素，所以这个是错误的嵌套
+&lt;div&gt;&lt;span&gt;&lt;/span&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+
+//对的
+&lt;div&gt;&lt;span&gt;&lt;/span&gt;&lt;a&gt;&lt;/a&gt;&lt;/div&gt;
+</code></pre>
+<p>二、块元素可以包含行内元素或某些块元素，但行内元素不能包含块元素，       它只能包含其它的行内元素</p>
+<pre><code>  &lt;div&gt;
+      &lt;span&gt;&lt;/span&gt;
+   &lt;/div&gt;
+
+   &lt;span&gt;
+      &lt;span&gt;&lt;/span&gt;
+   &lt;/span&gt;
+</code></pre>
+<p>三、有几个特殊的块级元素只能包含行内元素，不能再包含块级元素<br>
+h1、h2、h3、h4、h5、h6、p、dt<br>
+四、块级元素不能放在标签p里面<br>
+五、li 标签可以包含 div 标签，因为li 和 div 标签都是装载内容的容器<br>
+四、特殊html标签</p>
+<pre><code>&lt;em&gt;文字倾斜、更加语义强调&lt;/em&gt;    
+i ：文字倾斜
+    使用场景：字体图标
+strong：文字加粗、更加语义强调
+b ：文字加粗
+&lt;del&gt;￥199（ 删除¥199用于价格）&lt;/del&gt; 
+ol---&gt;li ： 有序列表 ol的属性：type 
+ul----&gt;li ： 无序列表
+img ： 图片 标签属性：src（路径）、alt、title 
+a ： 超链接(可以跳转页面) 
+      &lt;a href=&quot;&quot; target=&quot;__blank&quot;&gt;新页面打开&lt;/a&gt;
+span：文档中的节  
+code：代码文本  
+label：定义input标注  
+单标记：
+提交用submit（会刷新页面）：&lt;input type=&quot;submit&quot; value=&quot;登录&quot;/&gt;
+&lt;br /&gt; ===》换行
+&lt;hr /&gt; ===》分割线
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://yun-9090.github.io/post/hello-gridea/</id>
