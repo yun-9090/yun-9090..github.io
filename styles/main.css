@@ -3263,6 +3263,7 @@ mark {
   content: "•";
   position: absolute;
   right: -3px;
+  top: 1px;
   color: #40a9ff;
 }
 .layout-post .layout-post-header .layout-post-meta .item a {
@@ -3400,7 +3401,6 @@ mark {
 }
 .layout-post-sidebar ul li a {
   display: block;
-  overflow: hidden;
   text-overflow: ellipsis;
   padding-left: 1rem;
   color: rgba(0, 0, 0, 0.65);

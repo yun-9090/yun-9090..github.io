@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yun-9090.github.io</id>
     <title>Gridea</title>
-    <updated>2020-08-13T13:10:29.969Z</updated>
+    <updated>2020-08-13T14:57:59.412Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yun-9090.github.io"/>
     <link rel="self" href="https://yun-9090.github.io/atom.xml"/>
@@ -16,8 +16,14 @@
         <link href="https://yun-9090.github.io/post/html/">
         </link>
         <updated>2020-08-04T12:11:00.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="html">HTML</h1>
+        <summary type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://yun-9090.github.io/post-images/1597330163227.jpg" alt="" loading="lazy"></figure>
+<h1 id="html">HTML</h1>
 <p>Hyper Text Markup Language : 超文本标记语言</p>
+]]></summary>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://yun-9090.github.io/post-images/1597330163227.jpg" alt="" loading="lazy"></figure>
+<h1 id="html">HTML</h1>
+<p>Hyper Text Markup Language : 超文本标记语言</p>
+<!-- more -->
 <h2 id="字符集的意义">字符集的意义</h2>
 <ul>
 <li>1、网页中特殊意义的字符</li>
@@ -44,9 +50,21 @@
 </tr>
 </tbody>
 </table>
+<ul>
+<li>
 <h2 id="块级-行内-行内块元素">块级、行内、行内块元素</h2>
+</li>
+</ul>
 <p>*****规范 ：在特定的情况下用特定的东西 *****</p>
+<ul>
+<li>
+<ul>
+<li>
 <h3 id="块级元素">块级元素</h3>
+</li>
+</ul>
+</li>
+</ul>
 <blockquote>
 <p><strong>特点：</strong><br>
 1、总是在新行上开始【独占一行】<br>
@@ -65,7 +83,11 @@ table ：表格<br>
 form  ：表单<br>
 pre   ：定义预格式文本<br>
 ****一般和code配合使用</p>
+<ul>
+<li>
 <h3 id="行内元素">行内元素：</h3>
+</li>
+</ul>
 <blockquote>
 <p>特点：<br>
 1、和其他元素都在一行显示【不独占一行】<br>
@@ -85,7 +107,11 @@ i    ： 文字倾斜<br>
 strong ： 文字加粗、更加语义强调<br>
 b      ： 文字加粗<br>
 label  ： 定义input标注</p>
+<ul>
+<li>
 <h3 id="行内块元素">行内块元素：</h3>
+</li>
+</ul>
 <blockquote>
 <p>特点：<br>
 1、和其他元素都在一行显示【不独占一行】<br>
@@ -155,10 +181,10 @@ label：定义input标注
         <link href="https://yun-9090.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+        <summary type="html"><![CDATA[<p><img src="https://yun-9090.github.io/post-images/1597330075439.jpg" alt="" loading="lazy">👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+        <content type="html"><![CDATA[<p><img src="https://yun-9090.github.io/post-images/1597330075439.jpg" alt="" loading="lazy">👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 <!-- more -->
 <p><a href="https://github.com/getgridea/gridea">Github</a><br>
