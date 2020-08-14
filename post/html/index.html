@@ -9,7 +9,7 @@
 <meta name="description" content="世界这么大，带你去看看">
 <meta name="theme-color" content="#000">
 <title>HTML | 游九尘</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1597417214916">
+<link rel="shortcut icon" href="/favicon.ico?v=1597418054098">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -563,6 +563,14 @@
       <span>954<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
+    
+    
+    <span id="/post/html/" data-flag-title="HTML" class="meta-item pc-show leancloud_visitors">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-eye"></i>
+      <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
+    </span>
+    
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
@@ -761,7 +769,54 @@ label：定义input标注
 </div>
             
             
-  
+  <script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+
+<style>
+  .v .veditor {
+    min-height: 10rem;
+    background-image: url('');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    resize: none;
+  }
+
+  .v .vwrap {
+    border: 1px solid #000 !important;
+  }
+
+  .v .vbtn {
+    padding: .4rem 1.2rem !important;
+    border-color: #fff !important;
+    background-color: #49b1f5 !important;
+    color: #fff !important;
+    font-size: .7rem !important;
+  }
+
+  .v .vcards .vcard .vh .vmeta .vat {
+    padding: 0 .8rem !important;
+    border: 1px solid #00c4b6 !important;
+    border-radius: 5px !important;
+    color: #00c4b6 !important;
+  }
+</style>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'xl8HyHiJ5rbiqGzykoqK08mQ-gzGzoHsz',
+    appKey: '5AYuMcSNIa76GIMhnLK08vS6',
+    avatar: '',
+    placeholder: '快来 ^_^ 抢沙发  .......',
+    pageSize: '',
+    lang: 'zh-cn',
+    enableQQ: 'true' === 'false',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'false',
+  });
+</script>
 
           </div>
         </div>
