@@ -8,7 +8,7 @@
 <meta name="keywords" content="html、css、js、前端、学习">
 <meta name="description" content="世界这么大，带你去看看">
 <meta name="theme-color" content="#000">
-<title>游九尘</title>
+<title>JavaScript | 游九尘</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1599347311637">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -48,6 +48,8 @@
 </script>
 
 
+  <meta name="description" content="JavaScript" />
+  <meta name="keywords" content="JS" />
 </head>
 
 <body>
@@ -83,7 +85,7 @@
             
               
             
-            <li class="nav-item nav-item-active">
+            <li class="nav-item ">
               
               
                 <a href="/" target="_self">
@@ -182,8 +184,24 @@
     <div
       class="section-layout pisces ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -235,95 +253,336 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFjavascript">什么是JavaScript</a></li>
+<li><a href="#js%E5%8F%AF%E4%BB%A5%E5%B9%B2%E4%BB%80%E4%B9%88">js可以干什么?</a></li>
+<li><a href="#js%E7%9A%84%E6%9E%84%E6%88%90">js的构成</a></li>
+<li><a href="#%E5%9C%A8html%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8js">在html中如何使用js</a></li>
+<li><a href="#js%E7%9A%84%E8%BE%93%E5%87%BA%E8%AF%AD%E5%8F%A5-%E7%94%A8%E4%BA%8E%E8%B0%83%E8%AF%95%E4%BB%A3%E7%A0%81%E7%9A%84%E6%97%B6%E5%80%99%E7%94%A8">js的输出语句 ( 用于调试代码的时候用 )</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BDjs-defer">如何延迟加载js : defer</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BDjs-async">如何异步加载js : async</a></li>
+<li><a href="#js%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F">js中的变量</a></li>
+<li><a href="#js%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A">js中的注释</a></li>
+<li><a href="#%E4%BC%81%E4%B8%9A%E7%BA%A7%E6%B3%A8%E9%87%8A">企业级注释：</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a>
+<ul>
+<li><a href="#1%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">1》基本数据类型    === 原始数据类型</a></li>
+<li><a href="#2%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-array-function">2》引用数据类型   【array、function】</a></li>
+</ul>
+</li>
+<li><a href="#5js%E5%86%99%E6%B3%95%E8%A7%84%E8%8C%83">5》js写法规范</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2">数据类型的转换</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%AD%98%E5%82%A8%E6%9C%BA%E5%88%B6%E5%8E%9F%E7%90%86">变量的存储机制原理</a></li>
+<li><a href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6%E5%85%88%E7%AE%97%E4%B9%98%E9%99%A4%E5%86%8D%E7%AE%97%E5%8A%A0%E5%87%8F">算术运算符：先算乘除，再算加减</a></li>
+<li><a href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6">赋值运算符：</a></li>
+<li><a href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6">比较运算符：</a></li>
+<li><a href="#%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6">一元运算符：</a></li>
+<li><a href="#%E4%BA%8C%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6">二元运算符：</a></li>
+<li><a href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6">三元运算符：</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0"><em><strong><strong><strong><strong>函数</strong></strong></strong></strong></em></a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0">函数的参数</a></li>
+<li><a href="#arguments%E5%AF%B9%E8%B1%A1">arguments对象</a></li>
+<li><a href="#return">return</a></li>
+<li><a href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0">匿名函数</a>
+<ul>
+<li><a href="#%E4%B8%80-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0-%E6%B2%A1%E6%9C%89%E5%90%8D%E5%AD%97%E7%9A%84%E5%87%BD%E6%95%B0">一、匿名函数  :  没有名字的函数</a></li>
+<li><a href="#%E4%BA%8C-%E5%8C%BF%E5%90%8D%E7%9A%84%E8%87%AA%E6%88%91%E6%89%A7%E8%A1%8C-%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C">二、匿名的自我执行 【立即执行】</a></li>
+</ul>
+</li>
+<li><a href="#%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83">执行环境</a>
+<ul>
+<li><a href="#%E4%B8%80-%E4%BB%80%E4%B9%88%E6%98%AF%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83">一、什么是执行环境</a></li>
+<li><a href="#%E4%BA%8C-%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%88%86%E7%B1%BB3%E5%A4%A7%E7%B1%BB%E5%92%B1%E4%BB%AC%E8%BF%99%E9%87%8C%E8%AF%B4%E4%BF%A9%E5%A4%A7%E7%B1%BB">二、执行环境分类（3大类）,咱们这里说俩大类</a></li>
+<li><a href="#%E4%B8%89-%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">三、执行环境的生命周期</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#bom">BOM</a>
+<ul>
+<li><a href="#%E4%B8%80-bom-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B-%E5%9B%B4%E7%BB%95-%E6%B5%8F%E8%A7%88%E5%99%A8-%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C">一、bom： 浏览器对象模型  ：  围绕 ‘浏览器’ 的一些操作</a></li>
+<li><a href="#%E4%BA%8C-location%E5%AF%B9%E8%B1%A1-%E6%93%8D%E4%BD%9C%E6%B5%8F%E8%A7%88%E5%99%A8%E5%BD%93%E5%89%8Durl">二、location对象  ： 操作浏览器当前url</a></li>
+<li><a href="#28history-%E6%93%8D%E4%BD%9C%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E8%AE%BF%E9%97%AE%E8%BF%87%E7%9A%84url">28》history  ：  操作浏览器窗口访问过的url</a></li>
+<li><a href="#%E4%B8%80-navigator-%E5%8C%85%E5%90%AB%E6%9C%89%E5%85%B3%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E4%BF%A1%E6%81%AF">一、navigator  ： 包含有关浏览器的信息</a></li>
+<li><a href="#%E4%BA%8C-screen-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B1%8F%E5%B9%95%E4%BF%A1%E6%81%AF">二、screen  :   客户端屏幕信息</a></li>
+<li><a href="#29js%E5%AE%9A%E6%97%B6%E5%99%A8">29》js定时器</a></li>
+<li><a href="#js%E8%AF%AD%E8%A8%80%E6%98%AF%E4%B8%80%E4%B8%AA%E5%8D%95%E7%BA%BF%E7%A8%8B">js语言是一个单线程</a></li>
+</ul>
+</li>
+<li><a href="#js%E6%95%B0%E7%BB%84">js数组</a></li>
+<li><a href="#js%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95">js数组的方法</a></li>
+<li><a href="#js%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86">js数组遍历</a></li>
+</ul>
+
+  </div>
 </div>
+
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
       }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
     });
   }
-  </script>
-        <div class="section-box pisces">
-          <section class="section bg-color posts-expand slide-down-in">
-            
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://yun-9090.github.io/post/ifswitch-pan-duan-forwhiledowhile-xun-huan-md/">
-      if、switch判断；for、while、do...while循环
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-09-03 14:36:00">2020-09-03</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://yun-9090.github.io/tag/P8xRv03Mm/">
-        <span>JS</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>3<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>658<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
-            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
-            
-            
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://yun-9090.github.io/post/ifswitch-pan-duan-forwhiledowhile-xun-huan-md/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
         
       </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
     </div>
-  </article>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
   <h1 class="post-title">
     <a class="post-title-link" href="https://yun-9090.github.io/post/javascript/">
       JavaScript
@@ -361,188 +620,612 @@
       <span>3445<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
-            
-            
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://yun-9090.github.io/post/javascript/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
-    </div>
-  </article>
-
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://yun-9090.github.io/post/css/">
-      CSS
-    </a>
-  </h1>
-  <div class="post-meta">
     
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-08-14 06:41:37">2020-08-14</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
     
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://yun-9090.github.io/tag/l54Hp42Y5/">
-        <span>CSS</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>12<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
+    <span id="/post/javascript/" data-flag-title="JavaScript" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>2733<span class="pc-show language" data-lan="words">字数</span></span>
+      <i class="fa fa-eye"></i>
+      <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
     </span>
     
   </div>
 </section>
-      <div class="post-body">
-        
-        
-          
-            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
-            
-            
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://yun-9090.github.io/post/css/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
-    </div>
-  </article>
+            <div class="post-body next-md-body" id="post_body">
+              <h2 id="什么是javascript">什么是JavaScript</h2>
+<pre><code>a&gt; “弱类型” 的脚本语言
+b&gt; 基于 “原型” 的脚本语言
+</code></pre>
+<h2 id="js可以干什么">js可以干什么?</h2>
+<pre><code>a&gt;主要用于web页面使用
+b&gt;被非浏览器环境中去使用（nodejs）
+</code></pre>
+<h2 id="js的构成">js的构成</h2>
+<pre><code>ECMAScript  :  核心语法、基本对象
+DOM         :  文档对象模型
+BOM         :  浏览器对象模型
+</code></pre>
+<h2 id="在html中如何使用js">在html中如何使用js</h2>
+<p>a&gt;本页面写入：</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>b&gt;外部引入:</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=''&gt;&lt;/script&gt;
+</code></pre>
+<p>****js的位置</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h2 id="js的输出语句-用于调试代码的时候用">js的输出语句 ( 用于调试代码的时候用 )</h2>
+<pre><code>document.write()  ===》在文档中打印内容
+console.log()     ===》在控制台打印内容
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://yun-9090.github.io/post/html/">
-      HTML
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-08-04 20:11:00">2020-08-04</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://yun-9090.github.io/tag/7zRRpyJ65/">
-        <span>HTML</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>4<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>941<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
+注意：这句话写完以后 用 ;（分号）作为结尾
+</code></pre>
+<h2 id="如何延迟加载js-defer">如何延迟加载js : defer</h2>
+<p>defer ：js脚本可以延迟到文档完全被解析和显示之后执行</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot; defer src='路径'&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="如何异步加载js-async">如何异步加载js : async</h2>
+<p>async ：立即执行脚本，但不妨碍页面其他的操作<br>
+****简单粗暴 ： 谁先加载完了谁执行</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot; async src='路径'&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="js中的变量">js中的变量</h2>
+<pre><code>命名规则：
+	1、首位：字母、_、$
+	2、严格区分大小写
+	3、采用驼峰命名（第一个单词开始之后每一个单词首字母大写） 
+声明变量： var
+----------变量名禁止使用关键字----------
+</code></pre>
+<h2 id="js中的注释">js中的注释</h2>
+<pre><code>单行:  //
+多行:  /**/
+</code></pre>
+<h2 id="企业级注释">企业级注释：</h2>
+<pre><code>	1&gt;公共的js文件
+		/**
+		*文件用途说明
+		*作者姓名、联系方式
+		*制作日期
+		**/
+	2&gt;大的模块注释方法：
+		//================
+		// 代码用途
+		//================
+</code></pre>
+<h2 id="数据类型">数据类型</h2>
+<h3 id="1基本数据类型-原始数据类型">1》基本数据类型    === 原始数据类型</h3>
+<pre><code>string       : 字符串  ===&gt; 基本上加入引号的都是字符串类型
+number    : 数值    
+boolean   : 布尔    ===&gt; 有2个值，true、false
+			true : 对
+			false: 错
+undefined : 表示“缺少值”。应该是有一个值，但是还没有赋值
+null           : 表示“没有对象”。即该处不应该有值
+
+		  ***特殊的object
+
+==============undefined和null区别============
+null表示无对象，把他转换成数值是0
+undefined表示“缺少值”，把他转换成数值是NaN
+============================================
+</code></pre>
+<h3 id="2引用数据类型-array-function">2》引用数据类型   【array、function】</h3>
+<pre><code>object
+</code></pre>
+<p>------------------typeof 检测数据类型----------</p>
+<h2 id="5js写法规范">5》js写法规范</h2>
+<p>1》引号 引号的使用，单引号' ' 优先（如果不是引号嵌套，不要使用双引号）</p>
+<p>2》变量命名</p>
+<pre><code>a》str、num、bol 、obj 、fun 、arr : 作用域不大的情况
+b》循环  i、j、k
+c》变量命名前缀：
+
+	数组：a
+	字符串：s
+	数值：n
+	逻辑：b
+	函数：f
+	对象：o
+	正则：r
+</code></pre>
+<h2 id="数据类型的转换">数据类型的转换</h2>
+<p>1》其他类型转换成  ==&gt; 字符串类型</p>
+<pre><code>a&gt; 数据.toString()
+b&gt; String(数据)
+</code></pre>
+<p>2》其他类型转换成  ==&gt; 数值类型</p>
+<pre><code>a&gt; Number(数据)
+b&gt; parseInt(数据)   ==》整数
+c&gt; parseFloat(数据) ==》小数
+
+***注意：
+	  布尔true ： 1    对
+	  布尔false： 0    错	
+	  字符串不是纯数字：NaN
+
+***NaN【数值类型】 : 属性，代表非数字值的特殊值
+</code></pre>
+<p>3》其他类型转换成  ==&gt;布尔类型</p>
+<pre><code>a&gt; Boolean(数据)
+
+数值： 
+	0--false
+	NaN---false
+	其他值--true
+字符串：
+	非空字符串--true
+	空字符串--false
+
+null	  --false
+undefined --false
+</code></pre>
+<h2 id="变量的存储机制原理">变量的存储机制原理</h2>
+<pre><code>1》内存
+
+2》内存生命周期（三个周期）
+
+    分配期：分配所需要的内存
+    使用期：读、写
+    释放期：不需要时将其释放
+
+内存分配===》内存使用===》内存释放
+
+3》javascript内存的生命周期
+
+    内存分配：分配你所需要的暂时使用的内存大小
+    内存使用：读、写内存
+    内存回收：对于不需要使用的内存将其释放
+
+4》栈内存、堆内存
+
+    栈内存：
+
+        1、基本类型（string、number、boolean、undefined、null）
+        2、按值访问
+        3、存储的值大小固定
+        4、系统会自动分配内存空间
+        5、空间小，运行效率高
+        6、先进后出
+
+    堆内存：
+    
+        1、引用类型（object）
+        2、按引用访问
+        3、存储大小不固定
+        4、由代码进行指定分配
+        5、空间大，运行效率相对较低
+        6、无序存储（根据引用直接获取）
+</code></pre>
+<h2 id="算术运算符先算乘除再算加减">算术运算符：先算乘除，再算加减</h2>
+<pre><code>+   -   *   /   %（求余）
+
+数据类型隐式转换的问题：
+
+    1&gt; 布尔和数字或者纯布尔相加（+），布尔会自动转换成数值类型
+    2&gt; 字符串和任何类型（+），其他类型都会转换成字符串
+
+    ***注意：除了+以外，其他的都是按照数值进行运算。
+</code></pre>
+<h2 id="赋值运算符">赋值运算符：</h2>
+<pre><code>=   连续赋值：var a = b = c = d = 100;
+        区别：
+            var a局部
+            b,c,d全局
+
+    +=  :  x = x+y
+
+    -=  :  x = x-y
+
+    *=  :  x = x*y
+
+    /=  :  x = x/y
+
+    %=  :  x = x%y
+
+*****注意*****
+    var a  是局部变量（在全局范围内是全局的）
+    b   全局
+    window.b 全局 
+
+======补充=====
+    在js中尽量不要写全局变量
+</code></pre>
+<h2 id="比较运算符">比较运算符：</h2>
+<pre><code>    ==   等于 : 比较值
+    ===  值和类型都要进行比对
+    !=   不相等
+    !==  不相等（值和类型）
+    &gt;
+    &lt;
+    &gt;=
+    &lt;=
+****比较运算符最终返回的结果是布尔类型：true、false
+</code></pre>
+<h2 id="一元运算符">一元运算符：</h2>
+<pre><code>    i++
+    ++i
+    i--
+    --i
+    
+规则：如果不参与运算，++在前面和后面结果是一样的。
+
+如果有运算，++在前面（++i）则表示：先自身+1，再运算
+如果有运算，++再后面（i++）则表示：先运算，再自身+1
+</code></pre>
+<h2 id="二元运算符">二元运算符：</h2>
+<pre><code>    &amp;&amp;（与）
+        1、语法格式： 表达式 &amp;&amp; 表达式
+        2、规则：如果（左边表达式）判断是false，则返回（左边表达式）的值，否则返回（右边表达式）的值
+
+    ||（或）
+        1、语法格式： 表达式 || 表达式
+        2、规则：如果（左边表达式）判断为true，则返回（左边表达式）的值，否非返回（右边表达式）的值
+
+    ! （非） ： 取反
+</code></pre>
+<h2 id="三元运算符">三元运算符：</h2>
+<pre><code>    语法格式：  条件 ？ 结果1 : 结果2
+    如果条件成立true ，执行结果1，否则执行结果2
+</code></pre>
+<h2 id="函数"><em><strong><strong><strong><strong>函数</strong></strong></strong></strong></em></h2>
+<pre><code>    好处：
+        1、复用性
+        2、封装性（模块）
+一、函数的定义
+    函数声明
+        语法格式：
+                function 函数名(){
+                    函数体
+                }
+    函数表达式
+        语法格式：   
+                var 变量名 = function(){
+
+                }
+    ****区别：
+            函数表达式：函数只能在声明之后调用，因为这种方式的函数，是在函数运行的阶段				  赋值给变量的
+            函数声明：函数可以在声明函数的“作用域”任意范围内调用，因为这种方式，是在函数解析阶段赋值给函数名
+二、函数的调用 [使用]
+    	函数表达式或者函数声明是不能自己执行的，需要调用才可以执行
+    	调用： 函数名()
+
+********补充：
+    1、函数如果没有调用，则不会保存在内存中
+    2、当函数调用完毕，其中函数的代码就会被系统内存回收
+</code></pre>
+<h2 id="函数的参数">函数的参数</h2>
+<p>function fun(形参1,形参2,形参3.....){</p>
+<p>}<br>
+    fun(实参1,实参2,实参3.....);</p>
+<p>形参 ： 虚构存在  =<mark>&gt;名<br>
+    实参 ： 实际存在的</mark>=&gt;实际的值</p>
+<h2 id="arguments对象">arguments对象</h2>
+<p>作用：就是操作实参<br>
+    arguments.length  就是实参的个数【长度】<br>
+    arguments[0]      就是实参的第一个</p>
+<h2 id="return">return</h2>
+<pre><code>返回 ==》跳出当前函数体
+*********补充
+       length ： 长度   【可以理解成个数】
+</code></pre>
+<h2 id="匿名函数">匿名函数</h2>
+<h3 id="一-匿名函数-没有名字的函数">一、匿名函数  :  没有名字的函数</h3>
+<pre><code>    function(){
+
+    }
+    由于不符合语法要求，所以会报错
+    解决：
+        (function(){
+
+        })
+</code></pre>
+<h3 id="二-匿名的自我执行-立即执行">二、匿名的自我执行 【立即执行】</h3>
+<pre><code>    语法格式：
+            (function(形参1,形参2...){
+
+            })(实参1,实参2....)
+</code></pre>
+<h2 id="执行环境">执行环境</h2>
+<h3 id="一-什么是执行环境">一、什么是执行环境</h3>
+<pre><code>执行环境又被称为：执行上下文
+执行环境定义了变量或者函数有权或无权访问其他数据，决定了各自的行为。
+</code></pre>
+<h3 id="二-执行环境分类3大类咱们这里说俩大类">二、执行环境分类（3大类）,咱们这里说俩大类</h3>
+<pre><code>    1》全局执行环境
+        全局执行环境是最外围的执行环境。
+        在页面中，全局执行环境就是window对象。
+
+        ******当一打开页面，会自动生成window对象，那么全局的变量或者函数都属于window对象的内容。那么window就是全局的。 
+
+    2》函数执行环境
+        当某个函数被调用时，首先会创建一个执行环境以及作用域链，然后使用和其他参数来arguments初始化这个执行环境
+
+        *****当函数执行的时候，
+
+*********回收机制：
+
+        某个执行环境中的所有代码执行完毕，保存在执行环境中的变量或者函数都会进行销毁（回收）
+
+        但是全局执行环境是到关闭浏览器或者当前页面才会被回收
+</code></pre>
+<h3 id="三-执行环境的生命周期">三、执行环境的生命周期</h3>
+<pre><code>    
+    1&gt;创建阶段
+        建立作用域链
+        确定this指向
+    2&gt;执行阶段
+        变量赋值
+        函数调用
+        执行其他代码
+    3&gt;销毁，回收阶段
+</code></pre>
+<h1 id="bom">BOM</h1>
+<h2 id="一-bom-浏览器对象模型-围绕-浏览器-的一些操作">一、bom： 浏览器对象模型  ：  围绕 ‘浏览器’ 的一些操作</h2>
+<pre><code>    bom可以做的事情：
+    1. 获取到浏览器的型号（手机的型号）
+    2. url操作
+    3. 屏幕的大小尺寸
+</code></pre>
+<h2 id="二-location对象-操作浏览器当前url">二、location对象  ： 操作浏览器当前url</h2>
+<pre><code>    href  :  本身是可以获取到当前的url
+             设置对应跳转的url
+
+        **location.href = 'xxx' 可以跳转到对应的页面
+        但是，是在本页面进行的跳转，不是新窗口打开，怎么办？
+
+        window.open(url,'__blank') : 新窗口打开
+
+    search ： 设置或者获取，从问号（？），开始的url
+    hash   ： 设置或者获取，从井号（#），开始的url
+    
+解码：decodeURIComponent
+      decodeURIComponent(location.search)
+</code></pre>
+<h2 id="28history-操作浏览器窗口访问过的url">28》history  ：  操作浏览器窗口访问过的url</h2>
+<pre><code>back  :  返回上一页
+forward : 前进下一页
+go    :   前往指定的页面
+	go(0)  :   刷新
+	go(-1) :   返回上一页 back 
+	go(-2) :   返回上2页
+	go(1)  :   前进下一页 forward 
+	go(2)  :   前进下2页
+</code></pre>
+<h2 id="一-navigator-包含有关浏览器的信息">一、navigator  ： 包含有关浏览器的信息</h2>
+<pre><code>userAgent ： 用户代理头的值
+
+platform  :  返回运行浏览器的操作系统
+
+浏览器检测可以用 ： BrowserDetect.js
+BrowserDetect.browser;// 浏览器的名称，例如Firefox，IE
+BrowserDetect.version;//浏览器的版本，比如，7、11
+BrowserDetect.OS;//浏览器所宿主的操作系统，比如Windows、Linux
+</code></pre>
+<h2 id="二-screen-客户端屏幕信息">二、screen  :   客户端屏幕信息</h2>
+<pre><code>width  ： 返回显示屏幕的宽度
+height ： 返回显示屏幕的高度
+</code></pre>
+<h2 id="29js定时器">29》js定时器</h2>
+<p>1》setInterval :  间歇调用，“后”，将定时任务处理的函数添加到执行队列到队尾</p>
+<pre><code>语法格式：
+
+	setInterval( 执行函数,毫秒数  )
+</code></pre>
+<p>2》setTimeout  :  超时调用，“后”，将定时任务处理的函数添加到执行队列到队尾</p>
+<pre><code>语法格式：
+
+	setTimeout( 执行函数,毫秒数  )
+</code></pre>
+<p>3》清除定时器</p>
+<pre><code>clearInterval  ===&gt;setInterval
+clearTimeout   ===&gt;setTimeout
+
+	语法格式：
+
+		clearInterval(清除哪一个定时器)
+		clearTimeout(清除哪一个定时器)
+</code></pre>
+<h2 id="js语言是一个单线程">js语言是一个单线程</h2>
+<pre><code>一、js语言是一个单线程：
+    同一时间只能做一件事情，这也就意味着所有的任务需要排队，
+    前一个任务执行结束了，才可以继续执行下一个任务。
+
+二、js语言为什么是单线程
+
+	取决于js用在什么地方？和用户相关
+
+*****
+事件队列（定时器、ajax....）：先进先出
+
+
+获取id ： document.getElementById('id值')  
+获取集合元素： document.getElementsByTagName('元素名称');  
+获取集合元素的个数： length   
+给一个元素添加样式 :  main.style.background = 'blue';  
+</code></pre>
+<h1 id="js数组">js数组</h1>
+<p>一、什么是数组 ：使用单独的变量名来存储“一系列”的值</p>
+<p>二、数组可以做什么事 ：存储一系列（大量）的值</p>
+<p>三、使用数组（数组是一个对象）</p>
+<pre><code>1》如何创建数组	
+
+	构造函数形式
+		语法格式：new Array('字符串',数值:12,布尔:true)
+
+		****如果只有一个参数，这个参数就是数组的长度[只限数值]
+
+	字面量*******
+		语法格式：['字符串',数值:12,布尔:true]
+
+2》数组属性：长度
+
+	length
+</code></pre>
+<p>四、多维数组</p>
+<pre><code>二维  [  []  ]
+
+三维  [  [ [] ]  ]
+</code></pre>
+<h1 id="js数组的方法">js数组的方法</h1>
+<p>语法格式  ： 数组.方法名称(参数)</p>
+<p>1&gt; concat()  :  合并数组，最后返回一个新的数组</p>
+<p>2&gt; reverse() :  反转数组项的顺序</p>
+<pre><code>***会改变原来的数组
+</code></pre>
+<p>3&gt; join(参数分隔符)   :  将数组的元素组成一个字符串，用参数分隔符进行分割，默认以逗号分隔</p>
+<pre><code>***把数组转换成字符串
+</code></pre>
+<p>4&gt; push()  :  将参数添加到原数组的末尾，并且返回数组的长度<br>
+5&gt; pop     :  数组末尾移除最后一项，返回移除的项</p>
+<p>6&gt; unshift :  将参数添加到原数组的开头，并且返回数组的长度<br>
+7&gt; shift   :  删除原数组第一项，返回移除的项</p>
+<pre><code>1&gt;slice(参数1,参数2)  :  截取，返回新的数组
+	
+	参数1:开始位置
+	参数2:结束位置
+
+	***1个参数（正数）：从当前下标（包括下标）开始往后截取
+	***2个参数（正数）：从参数1（包括参数1）开始到参数2（不包括参数2）
+
+2&gt;sort()  :  排序
+
+	排序：
+
+		sort(function(a,b){
+			return a-b  //从小到大
+			return b-a  //从大到小
+		})
+
+3&gt;indexOf(参数)  :  查找，查找参数在数组中是否存在
+
+		如果存在返回下标
+		如果不存在返回-1  
+
+4&gt;splice()   :   可以实现删除，插入，替换操作
+
+	删除：2个参数，（1，2） 从下标1开始，删除2个
+	替换：3个参数， (0,1,4) 从下标0开始，长度为1到数组元素替换成4
+	插入：3个参数，（1,0,5) 表示在下标为1处添加一项5
+</code></pre>
+<h1 id="js数组遍历">js数组遍历</h1>
+<pre><code>1&gt; forEach
+
+	语法格式：  
+
+			数组.forEach( function(item,index){
+
+				item ==》数组的每一项
+				index =》数组的下标
+
+			} )
+
+	缺点：不可以使用break和return
+
+2&gt; map :  里面支持return，并且返回新的数组
+
+3&gt; filter : 过滤，并且返回新的数组
+
+----------------------返回布尔值----------------------
+
+4&gt; every : 所有的为true，则返回true
+
+5&gt; some  : 只要有一项为true，则最终返回true
+</code></pre>
+
+            </div>
             
             
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://yun-9090.github.io/post/html/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
-    </div>
-  </article>
-  
-            
-            
-<div class="page bg-color">
-  <ul class="pagination-ul">
-    
-    
-      
-        <li class="pagination-li pagination-active">
-            <a href="/page/../">
-              1
-            </a>
-        </li>
-      
-    
-    
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      游九尘
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://yun-9090.github.io/post/javascript/" title="JavaScript">https://yun-9090.github.io/post/javascript/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
   </ul>
+  <div class="tags">
+    
+      <a href="https://yun-9090.github.io/tag/P8xRv03Mm/"># JS</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="if、switch判断；for、while、do...while循环" href="https://yun-9090.github.io/post/ifswitch-pan-duan-forwhiledowhile-xun-huan-md/">if、switch判断；for、while、do...while循环</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="if、switch判断；for、while、do...while循环" href="https://yun-9090.github.io/post/ifswitch-pan-duan-forwhiledowhile-xun-huan-md/">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="CSS" href="https://yun-9090.github.io/post/css/">CSS</a>
+        <a class="nav-mobile-next" title="CSS" href="https://yun-9090.github.io/post/css/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
 </div>
-          </section>
+            
+            
+  <script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+
+<style>
+  .v .veditor {
+    min-height: 10rem;
+    background-image: url('');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    resize: none;
+  }
+
+  .v .vwrap {
+    border: 1px solid #000 !important;
+  }
+
+  .v .vbtn {
+    padding: .4rem 1.2rem !important;
+    border-color: #fff !important;
+    background-color: #49b1f5 !important;
+    color: #fff !important;
+    font-size: .7rem !important;
+  }
+
+  .v .vcards .vcard .vh .vmeta .vat {
+    padding: 0 .8rem !important;
+    border: 1px solid #00c4b6 !important;
+    border-radius: 5px !important;
+    color: #00c4b6 !important;
+  }
+</style>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'xl8HyHiJ5rbiqGzykoqK08mQ-gzGzoHsz',
+    appKey: '5AYuMcSNIa76GIMhnLK08vS6',
+    avatar: '',
+    placeholder: '快来 ^_^ 抢沙发  .......',
+    pageSize: '',
+    lang: 'zh-cn',
+    enableQQ: 'true' === 'false',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'false',
+  });
+</script>
+
+          </div>
         </div>
       </div>
     </div>
@@ -778,6 +1461,223 @@ var _hmt = _hmt || [];
     }
   })
 </script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        window.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        window.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        window.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        window.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      window.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
   </div>
 </body>
 
@@ -2232,7 +3132,6 @@ label：定义input标注
     speed: 200
   });
 </script>
-
 
 
 
